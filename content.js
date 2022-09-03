@@ -14,8 +14,6 @@ chrome.storage.sync.get("color2", ({ color2 }) => {
 
 newTab.addEventListener("click", async () => {
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-
-    putLinkHere.innerHTML = `<a href="https://missiondice.org" target="_blank">link</a>`;
 });
 
 
@@ -61,6 +59,10 @@ async function findText() {
     }
     
     console.log(validProductNames);
+    if (window.confirm('Press OK to see how sustainable your product is!')) 
+    {
+        window.open("https://missiondice.org", '_blank').focus();
+    };
     return true;
 }
 
