@@ -2,7 +2,7 @@ console.log("Chrome extension ready");
 import x from './epeatdata.json' assert {type: 'json'};
 import x2 from './estar.json' assert {type: 'json'};
 let changeColor = document.getElementById("changecolor");
-let putLinkHere = document.getElementById("putLinkHere");
+let spinner = document.getElementById("putSpinnerHere");
 let insertTable = document.getElementById("insertTable");
 
 chrome.storage.sync.get("color1", ({ color1 }) => {
@@ -12,7 +12,7 @@ chrome.storage.sync.get("color1", ({ color1 }) => {
 
 changeColor.addEventListener("click", async () => {
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-
+    spinner.innerHTML=`<div class="loader"></div>`;
     chrome.scripting.executeScript({
         target: { tabId: tab.id },
         func: findText,
@@ -125,6 +125,7 @@ chrome.runtime.onMessage.addListener(
         }
         addedHTML+="</table>";
         insertTable.innerHTML=addedHTML;
+        spinner.innerHTML=``;
         sendResponse({status: addedHTML});
        // sendResponse({status: analyze(887276439969)})
     }

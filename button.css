@@ -23,35 +23,19 @@ button.current {
                 0 0 0 4px black;
   }
 
-.loading {
-    display: flex;
-    justify-content: center;
-  }
-  
-.loading--full-height {
-    align-items: center;
-    height: 100%;
-  }
-  
-.loading::after {
-    content: "";
-    width: 50px;
-    height: 50px;
-    border: 10px solid #dddddd;
-    border-top-color: #009579;
+  .loader {
+    border: 12px solid #f3f3f3;
     border-radius: 50%;
-    transform: rotate(0.16turn);
-    animation: loading 1s ease infinite;
+    border-top: 12px solid #2e6140;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    margin-left: auto;
+    margin-right: auto;
   }
-  
-@keyframes loading {
-    from {
-      transform: rotate(0turn);
-    }
-    
-    to {
-      transform: rotate(1turn);
-    }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 
 .banner{
