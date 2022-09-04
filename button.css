@@ -3,30 +3,38 @@ button {
     margin: px;
     border: none;
     border-radius: 2px;
+      padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
   }
   
-  body {
+body {
     min-width: 750px; /* your desired width */
     max-width: 100%;
     position: relative;
-    vertical-align:middle;
+    vertical-align: middle;
   }
-  button.current {
+
+button.current {
     box-shadow: 0 0 0 2px white,
                 0 0 0 4px black;
   }
 
-  .loading {
+.loading {
     display: flex;
     justify-content: center;
   }
   
-  .loading--full-height {
+.loading--full-height {
     align-items: center;
     height: 100%;
   }
   
-  .loading::after {
+.loading::after {
     content: "";
     width: 50px;
     height: 50px;
@@ -37,7 +45,7 @@ button {
     animation: loading 1s ease infinite;
   }
   
-  @keyframes loading {
+@keyframes loading {
     from {
       transform: rotate(0turn);
     }
@@ -48,11 +56,14 @@ button {
   }
 
 
-  img {
+img {
     width: 80px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .center {
+.center {
+    display: block;
     margin-left: auto;
     margin-right: auto;
   }
