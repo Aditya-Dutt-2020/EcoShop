@@ -3,15 +3,23 @@ button {
     margin: px;
     border: none;
     border-radius: 2px;
+      padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
   }
   
-  body {
+body {
     min-width: 750px; /* your desired width */
     max-width: 100%;
     position: relative;
-    vertical-align:middle;
+    vertical-align: middle;
   }
-  button.current {
+
+button.current {
     box-shadow: 0 0 0 2px white,
                 0 0 0 4px black;
   }
@@ -33,9 +41,12 @@ button {
 
   img {
     width: 80px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .center {
+.center {
+    display: block;
     margin-left: auto;
     margin-right: auto;
   }
